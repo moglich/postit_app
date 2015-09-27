@@ -1,4 +1,7 @@
 <p>
+  <%= link_to 'Back to post overview', posts_path %>
+</p>
+<p>
   <%= render @post.categories %>
 </p>
 
@@ -7,4 +10,6 @@
 <p>
   <%= @post.description %>
 </p>
+<p><%= link_to 'edit', edit_post_path(@post)%></p>
 </hr>
+
