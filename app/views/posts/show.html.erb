@@ -1,9 +1,11 @@
+<% header = link_to('All Posts', posts_path) %>
+
 <p class='pull-right'>
   [<%= link_to 'edit this post', edit_post_path(@post) %>]
 </p>
-<p>
-  <%= link_to 'Back to post overview', posts_path %>
-</p>
+
+<%= render 'shared/content_title', title: header %>
+
 <p>
   <%= render @post.categories %>
 </p>
