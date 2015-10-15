@@ -1,17 +1,18 @@
+<% all_posts = link_to('All Posts', posts_path) %>
+
 <p class='pull-right'>
   [<%= link_to 'edit this category', edit_category_path(@category) %>]
 </p>
-<p>
-  <%= link_to 'Back to category overview', categories_path %>
-</p>
 
-<%= render 'shared/content_title', title: @category.name %>
+<%= render 'shared/content_title', title: "#{all_posts} &raquo; #{@category.name}".html_safe %>
 
-<ul>
+<% if @category.posts.empty? %>
+  There are no posts in this category!
+<% else %>
   <% @category.posts.each do |post| %>
-    <li><%= link_to post.title, post_path(post) %></li>
+    <%= render 'posts/post', post: post %>
   <% end %>
-</ul>
+<% end %>
 
 </hr>
 

@@ -38,7 +38,7 @@ class CategoriesController < ApplicationController
   private
 
   def category_params
-    params.require(:category).permit!
+    params.require(:category).permit(:name)
   end
 
   def set_category
