@@ -31,6 +31,6 @@
   <div class='well span8'>
     <em><%= comment.body %></em>
     <br/>
-    <small>created by <%= link_to(comment.creator.username, '') %>, at <%= comment.created_at %></small>
+    <small>created by <%= link_to(comment.creator.username, '') %>, at <%= display_datetime(comment.created_at) %></small>
   </div>
 <% end %>
