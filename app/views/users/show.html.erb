@@ -1,0 +1,23 @@
+<h4>Profile: <%= @user.username %></h4>
+<div class='well'>
+  <div class='dl-horizontal'>
+    <dt>Username:</dt>
+    <dd><%= @user.username %></dd>
+  </div>
+</div>
+<h5><%= @user.username %>'s activity:</h5>
+<ul class='nav nav-tabs'>
+  <li>
+    <%= link_to("Posts (#{@user.posts.size})", user_path(@user)) %>
+  </li>
+  <li>
+    <%= link_to("Comments (#{@user.comments.size})", user_path(@user) + "?tab=comments") %>
+  </li>
+<% @user.posts.each do |post| %>
+  <%= render 'posts/post', post: post %>
+<% end %>
+
+<% @user.comments.each do |comment| %>
+  <%= render 'shared/comments', comment: comment, link_to_post: true %>
+<% end %>
+</ul>

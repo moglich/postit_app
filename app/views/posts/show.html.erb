@@ -28,11 +28,6 @@
   <%= f.submit('Create Comment', class: 'btn btn-primary') %>
 <% end %>
 
-<h5>Comments</h5>
 <% @post.comments.each do |comment| %>
-  <div class='well span8'>
-    <em><%= comment.body %></em>
-    <br/>
-    <small>created by <%= link_to(comment.creator.username, '') %>, at <%= display_datetime(comment.created_at) %></small>
-  </div>
+  <%= render 'shared/comments', comment: comment %>
 <% end %>
