@@ -2,7 +2,9 @@
   <div class='span8 well'>
     <%= render post.categories %>
     <h4><%= link_to post.title, fix_url(post.url) %></h4>
-    <p><%= link_to 'edit', edit_post_path(post)%></p>
+    <% if logged_in? %>
+      <p><%= link_to 'edit', edit_post_path(post)%></p>
+    <% end %>
     <p><%= post.description %></p>
     <p>
       <span class='quiet'>posted by</span> <%= post.creator.username %>
