@@ -1,6 +1,8 @@
-<% link_to_post ||= nil %>
+<% link_to_post ||= false %>
+
 <div class='well span8'>
-  <em><%= comment.body %> on <%= link_to(comment.post.title, post_path(comment.post)) if link_to_post %></em>
+  <em><%= comment.body %></em>
+  on <%= link_to(comment.post.title, post_path(comment.post)) if link_to_post %>
   <br/>
   <small>created by <%= link_to(comment.creator.username, user_path(comment.creator)) %>, at <%= display_datetime(comment.created_at) %></small>
 </div>
