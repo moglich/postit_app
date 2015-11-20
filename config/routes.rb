@@ -10,6 +10,9 @@ PostitTemplate::Application.routes.draw do
   post '/register', to: 'users#create'
 
   resources :posts, except: :destroy do
+    member do
+      post 'vote'
+    end
     resources :comments, only: [:create]
   end
   resources :categories, except: :destroy
