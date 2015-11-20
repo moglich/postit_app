@@ -29,5 +29,5 @@
 <% end %>
 
 <% @post.comments.each do |comment| %>
-  <%= render 'shared/comments', comment: comment %>
+  <%= render 'comments/comment', comment: comment %>
 <% end %>

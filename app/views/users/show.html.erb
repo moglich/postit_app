@@ -17,7 +17,7 @@
 <% if params[:tab] == "comments" %>
   <div class='raw'>
     <% @user.comments.each do |comment| %>
-      <%= render 'shared/comments', comment: comment, link_to_post: true %>
+      <%= render 'comments/comment', comment: comment, link_to_post: true %>
     <% end %>
   </div>
 <% else %>
