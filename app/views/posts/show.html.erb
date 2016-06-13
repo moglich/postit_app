@@ -21,7 +21,7 @@
 <hr />
 <%= render 'shared/display_errors', object: @comment %>
 <%= form_for [@post, @comment] do |f| %>
-  <div class='controll-group'>
+  <div class='control-group'>
     <%= f.label :comment, 'Leave a comment' %>
     <%= f.text_area :body, rows: 3, class:'span4' %>
   </div>
